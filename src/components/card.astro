@@ -1,0 +1,12 @@
+---
+// interface Props{
+//     title:string;
+//     description?:string;
+// }
+const {title = "Dades no trobades", description= ""} = Astro.props;
+---
+
+<div>
+    <h3>{title}</h3>
+    {description && <p>{description}</p>}
+</div>

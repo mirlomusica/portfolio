@@ -1,0 +1,50 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Video from "../components/video.astro"
+import MusicCard from "../components/MusicCard.astro";
+import Title from "../components/title.astro";
+---
+
+<Layout>
+    <Title>Projectes Musicals</Title>
+    <MusicCard
+        title="Aqet Suc (2024-Actualitat)"
+        description="Banda de rock en català"
+    >
+        <Video 
+            url="https://www.youtube.com/embed/Q0XwEyyGVVQ?si=_972Do6HFn1Vq2JW"
+            description = "Video: Aqet Suc- Si no és això és allò"
+        />
+        <Video 
+            url="https://www.youtube.com/embed/WnNJ12JQBHk?si=6fEOViDoyP67lVUs"
+            description = "Video: Aqet Suc- Directament"
+        />
+    </MusicCard>
+
+    <MusicCard
+        title="Elle León (2025-actualitat)"
+        description="Cantautora irlandesa-catalana"
+    >
+        <Video 
+            url="https://www.youtube.com/embed/AwqjfX9plo0?si=6aXZZxclXS2VmtM-"
+            description = "Video: Elle León -Music & Memories"
+        />
+        <Video 
+            url="https://www.youtube.com/embed/9KDLnpXkz6U?si=M_wTitle0XhgszRUDsE"
+            description = "Video: Elle León - A Chara"
+        />
+    </MusicCard>
+    <MusicCard
+        title="Mirlo (2015-actualitat)"
+        description="Projecte en solitari"
+    >
+        <Video 
+            url="https://www.youtube.com/embed/rVOqFEKFkuo?si=TitleEpRll5UlEePduw"
+            description = "Video: Mirlo - Miratge"
+        />
+        <Video 
+            url="https://www.youtube.com/embed/OQ1k0Z_3jyA?si=n-qkIKqbDduJ97UT"
+            description = "Video: Mirlo - Lost & Happy"
+        />
+    </MusicCard>
+</Layout>

@@ -1,0 +1,60 @@
+---
+import Layout from "../layouts/Layout.astro";
+import cvData from "../../data/cv.json";
+import { Image } from "astro:assets";
+import Title2 from "../components/title2.astro";
+import Title from "../components/title.astro";
+import Title3 from "../components/title3.astro";
+---
+
+<Layout>
+	<Title>Informació</Title>
+	<Title2>Habilitats</Title2>
+	<div id="hab">
+		{cvData.skills.map(skill=>(
+			<p>{skill}</p>
+		))}
+	</div>
+	<Title2>Educació</Title2>
+	<ul>
+		{cvData.education.map((edu)=>(
+			<li>{edu.degree} - {edu.institution} - {edu.year}</li>
+		))} 
+	</ul>
+	<Title2>Experiència professional</Title2>
+	<ul>
+		{cvData.experience.map(exp=>(
+			<li>
+				<Title3>{exp.company} - {exp.location} - {exp.duration}</Title3>
+				<p><i>{exp.position}</i></p>
+				<ul>
+					{exp.responsibilities.map(resp=>(
+						<li>{resp}</li>
+					))}
+				</ul>
+			</li>
+		))}
+	</ul>
+	<Title2>Idiomes</Title2>
+	<ul>
+		{cvData.languages.map(lang=>(
+			<li><b>{lang.language}</b>-{lang.level}</li>
+		))}
+	</ul>
+	<Title2>Projectes Personals</Title2>
+	<ul>
+		{cvData.projects.map(proj=>(
+			<li>
+				<Title3>{proj.name}</Title3>
+				<Image
+					src={proj.image}
+					alt={proj.imgAlt}
+					width={800}
+					height={450}
+				/>
+				<p>{proj.description}</p>
+				<a href={proj.url}>{proj.url}</a>
+			</li>
+		))}
+	</ul>
+</Layout>

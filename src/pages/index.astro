@@ -1,0 +1,20 @@
+---
+import Layout from "../layouts/Layout.astro";
+import cvData from "../../data/cv.json";
+import profilePic from "../assets/profile-picture.JPG"
+import { Image } from "astro:assets";
+import Title from "../components/title.astro";
+import Title2 from "../components/title2.astro";
+---
+
+<Layout>
+	<Title>{cvData.name}</Title>
+	<Image
+		src={profilePic}
+		alt="imatge de perfil de l'Autor"
+		width={500}
+	/>
+	<Title2>{cvData.title}</Title2>
+	<p>{cvData.profile_summary}</p>
+
+</Layout>

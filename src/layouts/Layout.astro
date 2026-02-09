@@ -1,0 +1,51 @@
+---
+import Nav from "../components/nav.astro"
+import Foot from "../components/Foot.astro"
+import Title from "../components/title.astro"
+import Button from "../components/button.astro"
+import Card from "../components/card.astro"
+import "../CSS/style.css";
+---
+<html lang="ca" >
+<head>
+    <title>La meva web</title>
+    <meta charset="UTF-8">
+    <a href="#main" class="skip">ves al contingut principal</a>
+</head>
+<body>
+  <header>
+    <Nav></Nav>
+  </header>
+    <main id="main">
+        <slot/>
+    </main>
+    <Foot></Foot>
+</body>
+
+<style>
+  body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  main{
+    display: flex;
+    flex-direction: column;
+  }
+    .skip {
+
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip:focus {
+  position: static;
+  width: auto;
+  height: auto;
+}
+</style>
+</html>

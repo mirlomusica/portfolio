@@ -1,0 +1,23 @@
+:root {
+    --color1: #003444;
+    --color2: #088395;
+    --color3: #7AB2B2;
+    --color4: #EBF4F6;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color1);
+    background-color: var(--color4);
+}
+
+#hab {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.projImage {
+    height: 100px;
+}

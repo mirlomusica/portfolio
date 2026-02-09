@@ -1,0 +1,9 @@
+---
+const {title="",description=""} = Astro.props;
+import Title2 from "./title2.astro";
+---
+<div id="card">
+    <Title2>{title}</Title2>
+    <p>{description}</p>
+    <slot/>
+</div>
