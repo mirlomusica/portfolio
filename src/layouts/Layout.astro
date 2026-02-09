@@ -5,10 +5,11 @@ import Title from "../components/title.astro"
 import Button from "../components/button.astro"
 import Card from "../components/card.astro"
 import "../CSS/style.css";
+const {title="La meva web"}= Astro.props;
 ---
 <html lang="ca" >
 <head>
-    <title>La meva web</title>
+    <title>{title}</title>
     <meta charset="UTF-8">
     <a href="#main" class="skip">ves al contingut principal</a>
 </head>
