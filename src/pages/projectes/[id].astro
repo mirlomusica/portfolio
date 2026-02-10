@@ -1,0 +1,25 @@
+---
+import projectsData from '../../../data/cv.json';
+import Layout from '../../layouts/Layout.astro';
+import Title from '../../components/title.astro';
+//Funció que retorna totes les rutes dinàmiques per generar a la compilació
+export async function getStaticPaths(){
+    //Mapejar els estudis per generar els paràmetres id per cada ruta dinàmica
+    const paths = projectsData.projects.map(project => ({
+        params:{ id: project.id} //El id de cada estudi serà usat per la ruta dinàmica
+// Exemple de la sortida seria:   [{ "params": { "id": "1" } },{ "params": { "id": "2" } }]
+    }));
+    return paths;
+}
+//Obtenir la ID de la ruta dinàmica
+const {id} = Astro.params;
+//Busquem l'estudi per id
+const project = projectsData.projects.find(estudi => estudi.id === id);
+//Si no trobes l'estudi, llança error
+if(!project) {
+    throw new Error('Estudi no trobat');
+}
+---
+<Layout>
+    <Title>{project.name}</Title>
+</Layout>

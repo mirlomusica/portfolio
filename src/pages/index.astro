@@ -5,6 +5,7 @@ import profilePic from "../assets/profile-picture.JPG"
 import { Image } from "astro:assets";
 import Title from "../components/title.astro";
 import Title2 from "../components/title2.astro";
+import ProjectCard from "../components/ProjectCard.astro";
 ---
 
 <Layout
@@ -16,7 +17,22 @@ import Title2 from "../components/title2.astro";
 		alt="imatge de perfil de l'Autor"
 		width={500}
 	/>
+
+	<ProjectCard
+		title="holatt"
+		img={profilePic}
+		alt="fuckyu"
+	/>
 	<Title2>{cvData.title}</Title2>
 	<p>{cvData.profile_summary}</p>
 
+	<Title2>Projectes</Title2>
+	{cvData.projects.map(proj=>(
+		<ProjectCard
+			title={proj.name}
+			img={proj.image}
+			alt={proj.imgAlt}
+			id={proj.id}
+		/>
+	))}
 </Layout>

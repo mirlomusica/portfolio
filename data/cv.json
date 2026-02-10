@@ -69,12 +69,14 @@
         { "language": "Anglès", "level": "Avançat" }
     ],
     "projects": [{
+            "id": "web-project",
             "name": "Projecte Web Accessible",
             "description": "Pàgina feta amb Astro",
             "image": "/images/web-project-image.jpg",
             "imgAlt": "Codi HTML"
         },
         {
+            "id": "fractal-world",
             "name": "Visualitzador de Fractals",
             "description": "Petita demo per un videojoc",
             "image": "/images/FractalGame.png",
