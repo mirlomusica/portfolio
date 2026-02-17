@@ -18,15 +18,11 @@ import ProjectCard from "../components/ProjectCard.astro";
 		width={500}
 	/>
 
-	<ProjectCard
-		title="holatt"
-		img={profilePic}
-		alt="fuckyu"
-	/>
 	<Title2>{cvData.title}</Title2>
 	<p>{cvData.profile_summary}</p>
 
 	<Title2>Projectes</Title2>
+	<div id="projects">
 	{cvData.projects.map(proj=>(
 		<ProjectCard
 			title={proj.name}
@@ -35,4 +31,14 @@ import ProjectCard from "../components/ProjectCard.astro";
 			id={proj.id}
 		/>
 	))}
+	</div>
 </Layout>
+
+<style>
+	#projects{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 50px;
+	}
+</style>

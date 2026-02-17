@@ -71,9 +71,10 @@
     "projects": [{
             "id": "web-project",
             "name": "Projecte Web Accessible",
-            "description": "Pàgina feta amb Astro",
+            "description": "Pàgina Web Portfolio feta amb Astro",
             "image": "/images/web-project-image.jpg",
-            "imgAlt": "Codi HTML"
+            "imgAlt": "Codi HTML",
+            "url": "https://mirlomusica.netlify.app/"
         },
         {
             "id": "fractal-world",

@@ -2,6 +2,8 @@
 import projectsData from '../../../data/cv.json';
 import Layout from '../../layouts/Layout.astro';
 import Title from '../../components/title.astro';
+import Title2 from '../../components/title2.astro';
+import Image from 'astro/components/Image.astro';
 //Funció que retorna totes les rutes dinàmiques per generar a la compilació
 export async function getStaticPaths(){
     //Mapejar els estudis per generar els paràmetres id per cada ruta dinàmica
@@ -22,4 +24,22 @@ if(!project) {
 ---
 <Layout>
     <Title>{project.name}</Title>
+    <Title2>{project.description}</Title2>
+    
+    <a href={project.url}>
+        <Image
+            src={project.image}
+            alt={project.imgAlt}
+            width=500
+            height=500
+        />
+        <br>
+        Link al projecte >>>
+    </a>
 </Layout>
+
+<style>
+    a:hover{
+        -webkit-filter: brightness(90%);
+    }
+</style>

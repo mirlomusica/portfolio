@@ -3,20 +3,27 @@ import Image from "astro/components/Image.astro"
 import Title3 from "./title3.astro"
 const {title, img, alt, id} = Astro.props
 ---
-<div id="card">
-    <Title3>{title}</Title3>
-    <Image
-        src={img}
-        alt={alt}
-        width=300
-        height=300
-    />
-    <a href=`/projectes${id}`>Més Informació</a>
-</div>
+<a href=`/projectes/${id}`>
+    <div id="card">
+        <Title3>{title}</Title3>
+        <Image
+            src={img}
+            alt={alt}
+            width=300
+            height=300
+        />
+        <a href=`/projectes/${id}`>Més Informació</a>
+    </div>
+</a>
+
 
 <style>
     #card{
         display: flex;
         flex-direction: column;
+        padding: 10px;
+    }
+    div:hover{
+        -webkit-filter: brightness(90%);
     }
 </style>
